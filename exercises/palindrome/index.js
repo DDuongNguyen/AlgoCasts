@@ -32,5 +32,6 @@ function palindrome(str){
   })
 }
 // MIIIND BLLOOOWW
+// might work for other complicated algos
 
 module.exports = palindrome;

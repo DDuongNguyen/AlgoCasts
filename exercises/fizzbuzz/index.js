@@ -13,27 +13,51 @@
 //   buzz
 
 function fizzBuzz(n) {
-  char = {}
+  // char = {}
+  //
+  // for(i=1; i<=n; i++){
+  //   char[i] = i
+  // }
+  //
+  // for(let obj in char){
+  //   if (char[obj]%5 === 0 && char[obj]%3===0) {
+  //     char[obj]='fizzbuzz'
+  //   }
+  //   else if (char[obj] % 3 === 0){
+  //     char[obj]="fizz"
+  //   }
+  //   else if (char[obj]%5 === 0) {
+  //     char[obj]='buzz'
+  //   }
+  // }
+  // // console.log(Object.values(char)
+  //
+  // for (let obj in char){
+  //   console.log(char[obj]);
+  // }
 
-  for(i=1; i<=n; i++){
-    char[i] = i
-  }
-  // console.log(char)
-  for(let obj in char){
-    if (char[obj]%5 === 0 && char[obj]%3===0) {
-      char[obj]='fizzbuzz'
-    }
-    else if (char[obj] % 3 === 0){
-      char[obj]="fizz"
-    }
-    else if (char[obj]%5 === 0) {
-      char[obj]='buzz'
-    }
-  }
-  // console.log(Object.values(char)
+// im so dumb..........
+// better way below
 
-  for (let obj in char){
-    console.log(char[obj]);
+for (i=1; i<=n; i++){
+  if(i%3===0 && i%5===0){
+    console.log('fizzbuzz');
+  }
+  else if (i%3===0) {
+    console.log('fizz');
+  }
+  else if (i%5 === 0) {
+    console.log('buzz');
+  }
+  else {
+    console.log(i);
   }
 }
+
+
+
+
+}
+
+
 module.exports = fizzBuzz;

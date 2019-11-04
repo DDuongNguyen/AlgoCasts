@@ -31,6 +31,7 @@ var stringAProps = Object.keys(charMap1)
 var stringBProps = Object.keys(charMap2)
 
 // if(stringAProps.length !== stringBProps.length){
+// Basically can just use object key directly instead of assigning it to a variable which consumes more space
 if(Object.keys(charMap1).length !== Object.keys(charMap2).length){
   return false
 }
@@ -54,3 +55,13 @@ function buildCharMap(str){
 }
 
 module.exports = anagrams;
+
+
+// compare 2 sorted array to see if they are anagrams
+function sortAnagram(stringA,StringB){
+  return cleanString(stringA) === cleanString(stringB)
+}
+
+function cleanString(str){
+  return str.replace(/[^\w]/g,'').toLowerCase().split('').sort().join('')
+}

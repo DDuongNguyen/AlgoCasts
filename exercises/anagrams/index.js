@@ -9,26 +9,29 @@
 //   anagrams('Hi there', 'Bye there') --> False
 
 function anagrams(stringA, stringB) {
- const charMap1= {}
- const strA= stringA.replace(/[^\w]/g,'').toLowerCase()
- const charMap2= {}
- const strB= stringB.replace(/[^\w]/g,'').toLowerCase()
- for (let letter of  strA){
-   letter.toLowerCase()
-   // console.log(letter);
-   charMap1[letter]= charMap1[letter]+1 || 1
- }
- for (let letter of  strB){
-   letter.toLowerCase()
-   // console.log(letter);
-   charMap2[letter]= charMap2[letter]+1 || 1
- }
+  // this is ok but we could make a function for it
+ // const charMap1= {}
+ // const charMap2= {}
+ // const strA= stringA.replace(/[^\w]/g,'').toLowerCase()
+ // const strB= stringB.replace(/[^\w]/g,'').toLowerCase()
+ // for (let letter of  strA){
+ //   letter.toLowerCase()
+ //   charMap1[letter]= charMap1[letter]+1 || 1
+ // }
+ // for (let letter of  strB){
+ //   letter.toLowerCase()
+ //   charMap2[letter]= charMap2[letter]+1 || 1
+ // }
 // check for equivalent
+
+const charMap1= buildCharMap(stringA)
+const charMap2= buildCharMap(stringB)
 
 var stringAProps = Object.keys(charMap1)
 var stringBProps = Object.keys(charMap2)
 
-if(stringAProps.length !== stringBProps.length){
+// if(stringAProps.length !== stringBProps.length){
+if(Object.keys(charMap1).length !== Object.keys(charMap2).length){
   return false
 }
 
@@ -40,11 +43,14 @@ for(let key in stringAProps){
 
   return true
 }
+}
 
-
-// console.log(charMap1);
-// console.log('memeow');
-// console.log(charMap2);
+function buildCharMap(str){
+  charMap= {}
+  for(let element of str.replace(/[^\w]/g,'').toLowerCase()){
+    charMap[element] = charMap[element]+1 || 1
+  }
+  return charMap
 }
 
 module.exports = anagrams;

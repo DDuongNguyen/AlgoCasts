@@ -8,16 +8,27 @@
 //   capitalize('look, it is working!') --> 'Look, It Is Working!'
 
 function capitalize(str) {
-let words = (str.split(' '))
-// console.log(words)
-sentence = []
-for(word of words){
-  let rest= word.slice(1)
-  let first= word[0].toUpperCase()
-  console.log(word[0].concat(word[1]))
-  sentence.push(first.concat(rest))
-}
-  return (sentence.join(' '));
+  let words =[]
+  for(let word of str.split(' ')){
+    words.push(word[0].toUpperCase()+word.slice(1))
+  }
+  return words.join(' ')
 }
 
 module.exports = capitalize;
+
+
+
+
+
+// refactor this by combining of str.split and the mess inside the loop
+
+// let words = (str.split(' '))
+// sentence = []
+// for(word of words){
+//   let rest= word.slice(1)
+//   let first= word[0].toUpperCase()
+//   // console.log(word[0].concat(word.slice(1)))
+//   sentence.push(first.concat(rest))
+// }
+// return (sentence.join(' '));

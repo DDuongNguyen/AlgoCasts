@@ -25,10 +25,14 @@ function anagrams(stringA, stringB) {
 // check for equivalent
 
 const charMap1= buildCharMap(stringA)
+console.log(charMap1);
 const charMap2= buildCharMap(stringB)
+console.log(charMap2);
 
 var stringAProps = Object.keys(charMap1)
 var stringBProps = Object.keys(charMap2)
+
+
 
 // if(stringAProps.length !== stringBProps.length){
 // Basically can just use object key directly instead of assigning it to a variable which consumes more space
@@ -54,10 +58,27 @@ function buildCharMap(str){
   return charMap
 }
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 module.exports = anagrams;
 
 
 // compare 2 sorted array to see if they are anagrams
+
 function sortAnagram(stringA,StringB){
   return cleanString(stringA) === cleanString(stringB)
 }

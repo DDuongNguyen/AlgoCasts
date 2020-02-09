@@ -11,7 +11,7 @@
 function buildMap(string){
   charMap= {}
   for (let letter of string){
-    charMap[letter] = charMap[letter+1] || 1
+    charMap[letter] = charMap[letter] +1 || 1
   }
   return charMap
 }

@@ -9,7 +9,7 @@
 //   fib(4) === 3
 
 function fib(n) {
-    
+
   fib = [0, 1];
   index = 0;
   nextFib = 0;
@@ -25,5 +25,7 @@ function fib(n) {
 
   return fib[n];
 }
+
+// need an O(N) method
 
 module.exports = fib;

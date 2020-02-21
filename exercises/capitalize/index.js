@@ -8,22 +8,13 @@
 //   capitalize('look, it is working!') --> 'Look, It Is Working!'
 
 function capitalize(str) {
-
-let result = str[0].toUpperCase();
-
-for (let i=1; i<str.length; i++){
-  if (str[i-1] === ' '){
-    console.log('momo');
-    result += str[i].toUpperCase()
-  }else{
-    console.log('popo');
-    result += str[i]
-    console.log(result);
-  }
+let caps = []
+let arr = str.split(' ')
+for (word of arr){
+  caps.push(word[0].toUpperCase()+word.slice(1))
 }
-return result
-
-
+return caps.join(' ')
+}
 
 
   // 1 way to do it
@@ -32,7 +23,7 @@ return result
   //   words.push(word[0].toUpperCase()+word.slice(1))
   // }
   // return words.join(' ')
-}
+
 
 module.exports = capitalize;
 

@@ -13,6 +13,7 @@ function same(arr1, arr2) {
   }
 }
 
+// SECOND WAY TO DO IT
 
 function buildMap(arr) {
   map = {};
@@ -26,12 +27,9 @@ function same2(arr1, arr2) {
   if (arr1.length !== arr2.length) return false;
   map1 = buildMap(arr1);
   map2 = buildMap(arr2);
-  console.log(map1);
-  console.log(map2);
 
   for (let number in map1) {
     if (map2[number] !== Math.pow(number, 2)) {
-      console.log(map2[number], number);
       return false;
     } else {
       return true;
